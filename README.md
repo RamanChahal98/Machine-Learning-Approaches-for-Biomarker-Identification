@@ -1,0 +1,2 @@
+# Machine-Learning-Approaches-for-Biomarker-Identification
+A Machine learning approach for the identification of biomarkers in osteoarthritis, although methodology is generic enough to applied for other biomedical data. Dataset is provided by CHECK (Cohort Hip &amp; Cohort Knee)  In total 8 Machine Learning models are attached using feature selectors RFE and Relief, with classifiers Random Forest (RF), Logistic Regression (LR), Support Vector Classifier (SVC) and Xgboost (Xgb)
