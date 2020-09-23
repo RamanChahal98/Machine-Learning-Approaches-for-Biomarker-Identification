@@ -19,12 +19,11 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-data = pd.read_csv("GPs_diagnoses_on_clinical_data_From_R.csv")
-data.drop(['T0_a08', 'T0_A03', 'Unnamed: 0'], 1, inplace=True)
+data = pd.read_csv("DATA.csv")
 print(data)
 
 # Selecting target
-target = "CkaD"
+target = "target"
 
 X = data.iloc[:, data.columns != target].values
 y = data.iloc[:, data.columns == target].values
