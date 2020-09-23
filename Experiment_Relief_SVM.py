@@ -146,7 +146,7 @@ for train_index, test_index in kf.split(X_df):
     # Additional data to csv
     other_data = pd.DataFrame(selected_features, columns=["Selected Features"])
     other_data["No. Selected Features"] = len(selected_features)
-    other_data.to_csv(path_or_buf="/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_Relief_SVM/" + str(i) + "Relief-SVC_AdditionalData.csv")
+    other_data.to_csv(path_or_buf="PATH/" + str(i) + "Relief-SVC_AdditionalData.csv")
 
     # Predicting the test data with the optimised models
     predictions = estimator.predict(X_test)
@@ -194,7 +194,7 @@ for train_index, test_index in kf.split(X_df):
         plt.tight_layout()
 
         # Save Fig
-        filename = "/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_Relief_SVM/SHAP_Plot/" + str(get_scores()) + "Feature_Importance_Relief-SVC" + ".png"
+        filename = "PATH/" + str(get_scores()) + "Feature_Importance_Relief-SVC" + ".png"
         plt.savefig(filename, dpi=1080)
         plt.clf()
 
@@ -261,7 +261,7 @@ plt.title('ROC Relief-SVC')
 plt.legend(loc="lower right")
 # Tight layout
 plt.tight_layout()
-filename = "/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_Relief_SVM/ROC_Curves/" + "ROC Relief-SVC" + ".png"
+filename = "PATH/" + "ROC Relief-SVC" + ".png"
 plt.savefig(filename)
 #plt.show()
 
@@ -271,7 +271,7 @@ compiled_data["AUC Score"] = scores
 compiled_data["Accuracy Score"] = accuracy_scores
 compiled_data["F1 Score"] = f1_scores
 compiled_data["Precision Score"] = precision_scores
-compiled_data.to_csv("/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_Relief_SVM/Relief-SVC Scores.csv")
+compiled_data.to_csv("PATH/Relief-SVC Scores.csv")
 print(compiled_data)
 print()
 
