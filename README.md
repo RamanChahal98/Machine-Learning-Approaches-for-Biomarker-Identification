@@ -36,7 +36,7 @@ To use these models with the data provided (see https://easy.dans.knaw.nl/ui/dat
 
 data = pd.read_csv("data location here")
 
-
+target = "target"
 
 Data locations will need to be changed by user a total of 5 times. These are the 1. data location just mentioned,
 
