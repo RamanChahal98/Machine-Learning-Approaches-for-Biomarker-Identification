@@ -154,7 +154,7 @@ for train_index, test_index in kf.split(X_df):
     other_data["No. Selected Features"] = len(selected_features)
     other_data["Max Depth"] = estimator.named_steps['classifier'].max_depth
     other_data["Number of Trees"] = estimator.named_steps['classifier'].n_estimators
-    other_data.to_csv(path_or_buf="/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_Relief_XGBOOST/" + str(i) + "Relief-Xgb_AdditionalData.csv")
+    other_data.to_csv(path_or_buf="PATH/" + str(i) + "Relief-Xgb_AdditionalData.csv")
 
     # Predicting the test data with the optimised models
     predictions = estimator.predict(X_test)
@@ -201,7 +201,7 @@ for train_index, test_index in kf.split(X_df):
         plt.tight_layout()
 
         # Save Fig
-        filename = "/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_Relief_XGBOOST/SHAP_Plot/" + str(get_scores()) + "Feature_Importance_Relief-Xgboost" + ".png"
+        filename = "PATH/" + str(get_scores()) + "Feature_Importance_Relief-Xgboost" + ".png"
         plt.savefig(filename, dpi=1080)
         plt.clf()
 
@@ -269,7 +269,7 @@ plt.title('ROC Relief-Xgb')
 plt.legend(loc="lower right")
 # Tight layout
 plt.tight_layout()
-filename = "/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_Relief_XGBOOST/ROC_Curves/" + "ROC Relief-Xgb" + ".png"
+filename = "PATH/" + "ROC Relief-Xgb" + ".png"
 plt.savefig(filename)
 #plt.show()
 
@@ -279,7 +279,7 @@ compiled_data["AUC Score"] = scores
 compiled_data["Accuracy Score"] = accuracy_scores
 compiled_data["F1 Score"] = f1_scores
 compiled_data["Precision Score"] = precision_scores
-compiled_data.to_csv("/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_Relief_XGBOOST/Relief-Xgb Scores.csv")
+compiled_data.to_csv("PATH/Relief-Xgb Scores.csv")
 print(compiled_data)
 print()
 
