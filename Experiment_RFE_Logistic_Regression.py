@@ -150,7 +150,7 @@ for train_index, test_index in kf.split(X_df):
     # Additional data to csv
     other_data = pd.DataFrame(selected_features, columns=["Selected Features"])
     other_data["No. Selected Features"] = estimator.named_steps['RFE'].n_features_to_select
-    other_data.to_csv(path_or_buf="/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_RFE_LR/" + str(i) +"RFE-LR_AdditionalData.csv")
+    other_data.to_csv(path_or_buf="PATH/" + str(i) +"RFE-LR_AdditionalData.csv")
 
 
 
@@ -201,7 +201,7 @@ for train_index, test_index in kf.split(X_df):
         plt.tight_layout()
 
         # Save Fig
-        filename = "/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_RFE_LR/SHAP_Plot/" + str(get_scores()) + "Feature_Importance_RFE-LR" + ".png"
+        filename = "PATH/" + str(get_scores()) + "Feature_Importance_RFE-LR" + ".png"
         plt.savefig(filename, dpi=1080)
         plt.clf()
 
@@ -268,7 +268,7 @@ plt.title('ROC RFE-Logistic Regression')
 plt.legend(loc="lower right")
 # Tight layout
 plt.tight_layout()
-filename = "/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_RFE_LR/ROC_Curves/" + "ROC RFE-Logistic Regression" + ".png"
+filename = "PATH/" + "ROC RFE-Logistic Regression" + ".png"
 plt.savefig(filename)
 #plt.show()
 
@@ -278,7 +278,7 @@ compiled_data["AUC Score"] = scores
 compiled_data["Accuracy Score"] = accuracy_scores
 compiled_data["F1 Score"] = f1_scores
 compiled_data["Precision Score"] = precision_scores
-compiled_data.to_csv("/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/Experiment_RFE_LR/RFE-LR Scores.csv")
+compiled_data.to_csv("PATH/RFE-LR Scores.csv")
 print(compiled_data)
 print()
 
