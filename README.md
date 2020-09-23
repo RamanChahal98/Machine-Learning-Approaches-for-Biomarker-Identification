@@ -32,9 +32,11 @@ seaborn:
 
 --- Usage ---
 
-To use these models with the data provided - or another biomedical dataset, you may need to change the loading location where the data is loaded:
+To use these models with the data provided (see https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:62981) - or another biomedical dataset, you need to change the loading location where the data is loaded, and the target column:
 
 data = pd.read_csv("data location here")
+
+
 
 Data locations will need to be changed by user a total of 5 times. These are the 1. data location just mentioned,
 
