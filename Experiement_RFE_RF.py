@@ -104,8 +104,6 @@ selector = RFE(classifier, n_features_to_select = 10, step=0.05)
 pipeline = Pipeline([("preprocessor", preprocess_pipeline), ("RFE", selector), ("classifier", classifier)])
 
 # Dictionary that contains the values for the parameter sweep
-#param_grid = dict(RFE__n_features_to_select=[2,3,4,5], classifier__max_depth=[10], classifier__n_estimators=[100])#, classifier__class_weight="balanced"
-#param_grid = dict(RFE__n_features_to_select=[5, 10, 15, 20], classifier__max_depth=[2, 4, 6, 8, 10], classifier__n_estimators=[100, 300, 500])
 param_grid = dict(RFE__n_features_to_select=[10, 20, 30, 40, 50], classifier__max_depth=[2, 3, 4, 5], classifier__n_estimators=[100, 200, 500, 1000])
 
 
@@ -154,7 +152,7 @@ for train_index, test_index in kf.split(X_df):
     other_data["No. Selected Features"] = estimator.named_steps['RFE'].n_features_to_select
     other_data["Max Depth"] = estimator.named_steps['classifier'].max_depth
     other_data["Number of Trees"] = estimator.named_steps['classifier'].n_estimators
-    other_data.to_csv(path_or_buf="/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/OriginalTest_RFE_RF/RFE-RF_AdditionalData" + str(i) + ".csv")#, "RFE-RF_AdditionalData.csv"
+    other_data.to_csv(path_or_buf="PATH/RFE-RF_AdditionalData" + str(i) + ".csv")
 
     # Predicting the test data with the optimised models
     predictions = estimator.predict(X_test)
@@ -239,7 +237,7 @@ for train_index, test_index in kf.split(X_df):
         plt.tight_layout()
 
         # Save Fig
-        filename = "/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/OriginalTest_RFE_RF/SHAP_Plot/" + str(get_scores()) + "Feature_Importance" + ".png"
+        filename = "PATH/FI_Plot/" + str(get_scores()) + "Feature_Importance" + ".png"
         plt.savefig(filename, dpi=1080)
         plt.clf()
 
@@ -271,7 +269,7 @@ plt.title('ROC RFE-RF')
 plt.legend(loc="lower right")
 # Tight layout
 plt.tight_layout()
-filename = "/home/ramona_lisa/uni/Final Project/Rfe/Updated_Figs/OriginalTest_RFE_RF/ROC_Curves/" + "ROC RFE-RF" + ".png"
+filename = "PATH/ROC_Curves/" + "ROC RFE-RF" + ".png"
 plt.savefig(filename)
 #plt.show()
 
